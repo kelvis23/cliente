@@ -1,0 +1,42 @@
+   header {
+      background-color: #666;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+   }
+   /* selecionar colores en base al contraste*/
+   a{ color: rgb(23, 8, 236);
+      text-decoration: none;
+   }
+   .biografia{
+      font-weight: bold;
+      font-size: 25px;
+   }  
+   table {
+      border: 1px;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+
+   th{
+      font-weight: bold;
+      background-color: #f2f2f2;
+   }
+   
+  th, td {
+    padding: 8px;
+    border: 1px solid #333;
+  }
+  .recreo{ background-color: yellow;}
+ footer{
+      background-color: #666;
+    
+      text-align: center;
+      font-size: 35px;
+      color: white;
+   }
+  
+
+ 
