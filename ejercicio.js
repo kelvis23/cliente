@@ -45,7 +45,7 @@ alert(media) */
 
 // 6.  El adivinador: Crear un código que adivine un número del 1 al 100.
 
-/*
+
 var numero = Math.floor(Math.random() * 100) + 1;
 
 var piensa = Number(prompt("en que numero estoy pensado"));
@@ -61,7 +61,7 @@ while (piensa != numero) {
     }
 }
 alert(numero + "es el numero corexto");
-*/
+
 
 // 7.  Jugando un poco con la consola: Aventura conversacional/juego de preguntas y respuestas.
 /*
@@ -103,7 +103,7 @@ if(pregunta ==  alto){
 
 
 // 8.  Crear un menú contextual. Se repite hasta que el usuario elige la opción “Salir”.
-
+/*
 let numero;
 do{
 console.log("menu")
@@ -114,6 +114,7 @@ console.log("3.salir");
 
 
 }while(numero!=3);
+*/
 
 // 9.  Crear el juego de piedra papel o tijera. (Podemos investigar math.random()).
 /*
