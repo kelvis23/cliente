@@ -11,24 +11,39 @@ alert("el area de un cuadro es " + area + " y el perimto es " + perimetros) */
 
 
 // 2.  detector numeros magicos  numeros 4 digitos
+/*
+var digitos = prompt("introduce un numero de 4 digitos");
 
+let primero = parseInt(digitos[0]);    
+let segundo = digitos[1];
+let tercero = digitos[2];            
+let cuarto = parseInt(digitos[3]);     
+let union = primero + cuarto;    
+let suma = parseInt(segundo + tercero)
 
-
+if (union === suma) {
+    alert("¡Mágico!");
+} else {
+    alert("No es mágico");
+}
+*/
 // 3.  Crea un programa que “cuente” la cantidad de dígitos de un número (sin funciones).
 
 /*
 var numero = Number(prompt("introduce un numero"));
-
-var digito = numero.toString().length;
-console.log(digito); 
+while(control <= numero){
+    control = 1
+    control ++
+}
 */
+
 
 // 4.  Mostrar los números pares del 1 al 100.
 
-/*for(i= 0; i<=99 ; i++){
-    if(i %2==0){
+/*for(i= 0; i<=99 ; i+=2){
+
         console.log(i)
-    }
+
 }*/
 
 // 5.  Se le pide al usuario el número de elementos que va a introducir para calcular su media.
@@ -44,7 +59,7 @@ var media = suma/numero
 alert(media) */
 
 // 6.  El adivinador: Crear un código que adivine un número del 1 al 100.
-/*
+
 var min = 1
 var max = 100
 
@@ -63,7 +78,7 @@ while (opcion != numero) {
        numero = Math.floor(Math.random() * (max - min + 1)) + min;
 }
 alert(numero + " es el numero corexto");
-*/
+
 
 
 // 7.  Jugando un poco con la consola: Aventura conversacional/juego de preguntas y respuestas.
@@ -163,7 +178,7 @@ if (numero == 1) {
 */
 
 // 10. Mostrar los primeros 100 números primos.
-
+/*
 let numero = 2;
 
 while (numero <= 100) {
@@ -179,3 +194,4 @@ while (numero <= 100) {
   }
   numero++;
 }
+*/
