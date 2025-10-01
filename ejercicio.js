@@ -44,7 +44,7 @@ var media = suma/numero
 alert(media) */
 
 // 6.  El adivinador: Crear un código que adivine un número del 1 al 100.
-
+/*
 var min = 1
 var max = 100
 
@@ -63,6 +63,7 @@ while (opcion != numero) {
        numero = Math.floor(Math.random() * (max - min + 1)) + min;
 }
 alert(numero + " es el numero corexto");
+*/
 
 
 // 7.  Jugando un poco con la consola: Aventura conversacional/juego de preguntas y respuestas.
@@ -162,33 +163,19 @@ if (numero == 1) {
 */
 
 // 10. Mostrar los primeros 100 números primos.
-/*for(i=2; i <=100 ;i++){
-    if(i%2==1){
-    if(i /i ==1 && i/1 ==i ){
-        
-            console.log(i )
-    }
-}
-}*/
-/*
-function esPrimo(n) {
-    if (n <= 1) return false;
-    if (n === 2) return true;
 
-    for (let i = 2; i * i <= n; i++) {
-        if (n % i === 0) return false;
-    }
-
-    return true;
-}
 let numero = 2;
 
-console.log("Los primeros 100 números primos son:");
-
-while (numero < 100) {
-    if (esPrimo(numero)) {
-        console.log(numero);
-        
+while (numero <= 100) {
+  let esPrimo = true;
+  for (let i = 2; i < numero; i++) {
+    if (numero % i === 0) {
+      esPrimo = false;
+      break;
     }
-    numero++;
-}*/
+  }
+  if (esPrimo) {
+    console.log(numero);
+  }
+  numero++;
+}
