@@ -45,22 +45,24 @@ alert(media) */
 
 // 6.  El adivinador: Crear un código que adivine un número del 1 al 100.
 
+var min = 1
+var max = 100
 
-var numero = Math.floor(Math.random() * 100) + 1;
+var numero = Math.floor(Math.random() * (min , max)) ;
 
-var piensa = Number(prompt("en que numero estoy pensado"));
-while (piensa != numero) {
-            var numero = Math.floor(Math.random() * 100) + 1;
-    if (numero < piensa) {
-        console.log(" es muy pequeño " + numero + " al numero que estoy pensado , vuelve a crear otro numuro");
-
-    } else if (numero > piensa) {
-        console.log(" es muy grande " + numero + " al numero que estoyn pensado , vuelbe a crear otro numero");
-
+var opcion = Number(prompt("en que numero estoy pensado"));
+while (opcion != numero) {
+    if (numero < opcion) {
+        alert(" es muy pequeño " + numero + " al numero que estoy pensado , vuelve a crear otro numuro");
+        min = numero+1
+    } else if (numero > opcion) {
+        alert(" es muy grande " + numero + " al numero que estoy pensado , vuelbe a crear otro numero");
+        max = numero -1
     } else {
     }
+       numero = Math.floor(Math.random() * (max - min + 1)) + min;
 }
-alert(numero + "es el numero corexto");
+alert(numero + " es el numero corexto");
 
 
 // 7.  Jugando un poco con la consola: Aventura conversacional/juego de preguntas y respuestas.
