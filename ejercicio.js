@@ -225,3 +225,15 @@ function navasesh(numero) {
 let numero = Number(prompt("introduce el numero para calcualra el navash"))
 console.log (navasesh(numero))
 */
+
+numero = Number(prompt("introduce invertido"))
+
+while (numero >=10){
+    var adittion = 0;
+    while(numero >0){
+        adittion + numero %10
+        numero = adittion;
+    }
+    numero = adittion;
+}
+alert("la suma es "+adition);
