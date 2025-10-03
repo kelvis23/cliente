@@ -59,27 +59,27 @@ var media = suma/numero
 alert(media) */
 
 // 6.  El adivinador: Crear un código que adivine un número del 1 al 100.
-
+/*
 var min = 1
 var max = 100
 
-var numero = Math.floor(Math.random() * (min , max)) ;
+var numero = Math.floor(Math.random() * (min, max));
 
 var opcion = Number(prompt("en que numero estoy pensado"));
 while (opcion != numero) {
     if (numero < opcion) {
         alert(" es muy pequeño " + numero + " al numero que estoy pensado , vuelve a crear otro numuro");
-        min = numero+1
+        min = numero + 1
     } else if (numero > opcion) {
         alert(" es muy grande " + numero + " al numero que estoy pensado , vuelbe a crear otro numero");
-        max = numero -1
+        max = numero - 1
     } else {
     }
-       numero = Math.floor(Math.random() * (max - min + 1)) + min;
+    numero = Math.floor(Math.random() * (max - min + 1)) + min;
 }
 alert(numero + " es el numero corexto");
 
-
+*/
 
 // 7.  Jugando un poco con la consola: Aventura conversacional/juego de preguntas y respuestas.
 /*
@@ -122,15 +122,24 @@ if(pregunta ==  alto){
 
 // 8.  Crear un menú contextual. Se repite hasta que el usuario elige la opción “Salir”.
 /*
+let x
+let y
 let numero;
 do{
 console.log("menu")
-console.log("1. preguntas");
-console.log("2.adivinar");
+console.log("1. suma");
+console.log("2.multiplicar");
 console.log("3.salir");
  numero = Number(prompt("es coge un numero para moverte por el menu"));
-
-
+ if(numero ==1){
+     x = Number(prompt("introduce un numero"));
+     y = Number(prompt("introduce otro numero"))
+ }else if(numero ==2){
+     x = Number(prompt("introduce un numero"));
+     y = Number(prompt("introduce otro numero")
+ } else {
+    alert("error");
+ }
 }while(numero!=3);
 */
 
@@ -178,20 +187,41 @@ if (numero == 1) {
 */
 
 // 10. Mostrar los primeros 100 números primos.
-/*
-let numero = 2;
 
-while (numero <= 100) {
-  let esPrimo = true;
-  for (let i = 2; i < numero; i++) {
-    if (numero % i === 0) {
-      esPrimo = false;
-      break;
+
+let numero = 2;
+let n = 1;
+while (n <= 100) {
+    let esPrimo = true;
+    for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            esPrimo = false;
+            break;
+        }
     }
-  }
-  if (esPrimo) {
-    console.log(numero);
-  }
-  numero++;
+    if (esPrimo) {
+        console.log(numero);
+        n++;
+    }
+    numero++;
+
 }
+
+
+//11 navasesh
+/*
+function navasesh(numero) {
+    while (numero >= 10) {
+        let suma = 10
+        let n = numero;
+        while (n > 0) {
+            suma + (n % 10);
+            n = Math.floor(n / 10)
+        }
+        numero = suma;
+    }
+    returnnumero
+}
+let numero = Number(prompt("introduce el numero para calcualra el navash"))
+console.log (navasesh(numero))
 */
