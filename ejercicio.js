@@ -2,64 +2,59 @@
 
 // 1.  calculadora de areas y perimetros 
 
-/* var lado = Number(prompt("introduce la medida de un cuadrado"));
+var lado = Number(prompt("introduce la medida de un cuadrado"));
 
 var perimetros = 4 * lado;
 var area = lado ** 2;
 
-alert("el area de un cuadro es " + area + " y el perimto es " + perimetros) */
+alert("el area de un cuadro es " + area + " y el perimto es " + perimetros)
 
 
 // 2.  detector numeros magicos  numeros 4 digitos
-/*
-var digitos = prompt("introduce un numero de 4 digitos");
-
-let primero = parseInt(digitos[0]);    
-let segundo = digitos[1];
-let tercero = digitos[2];            
-let cuarto = parseInt(digitos[3]);     
-let union = primero + cuarto;    
-let suma = parseInt(segundo + tercero)
-
-if (union === suma) {
-    alert("¡Mágico!");
-} else {
-    alert("No es mágico");
-}
-*/
+let number = Number(prompt("introduce el numero"));
+let last = Number % 10;
+let numbers = number % 1000;
+let mid = (mid - last) / 10;
+let first = (number - (number % 1000)) / 1000;
+alert(first);
+alert(mid);
+alert(last);
+if (first + last == mid) {
+    alert("Es magico");
+} else ("No es");
 // 3.  Crea un programa que “cuente” la cantidad de dígitos de un número (sin funciones).
 
-/*
+
 var numero = Number(prompt("introduce un numero"));
-while(control <= numero){
+while (control <= numero) {
     control = 1
-    control ++
+    control++
 }
-*/
+
 
 
 // 4.  Mostrar los números pares del 1 al 100.
 
-/*for(i= 0; i<=99 ; i+=2){
+for (i = 0; i <= 99; i += 2) {
 
-        console.log(i)
+    console.log(i)
 
-}*/
+}
 
 // 5.  Se le pide al usuario el número de elementos que va a introducir para calcular su media.
-/*
+
 var numero = Number(prompt("introduce la cantida numeros"));
 var suma = 0
 var a;
-for(i= 1; i<=numero ; i++){
-  a = Number(prompt("introduse el numero"))
- suma+=a
+for (i = 1; i <= numero; i++) {
+    a = Number(prompt("introduse el numero"))
+    suma += a
 }
-var media = suma/numero
-alert(media) */
+var media = suma / numero
+alert(media)
 
 // 6.  El adivinador: Crear un código que adivine un número del 1 al 100.
-/*
+
 var min = 1
 var max = 100
 
@@ -79,72 +74,97 @@ while (opcion != numero) {
 }
 alert(numero + " es el numero corexto");
 
-*/
+
 
 // 7.  Jugando un poco con la consola: Aventura conversacional/juego de preguntas y respuestas.
-/*
-alert("esto es un  concursos de pereguntas y respuestas ")
 
-var año = Number(prompt("en que  año descubrio cristbal colan america"));
-if(año ==  1492){
-    alert("correxto");
-}else{
-    alert("incorexto fue en 1942")
-}
-alert("pregunta numero 2")
- var nombre = prompt("cual era el planeta que en realida no es un planeta en el sistemea solar");
-if (nombre ==pluton){
+var numero = Number(prompt("esto es un  concursos de pereguntas y respuestas  es coge las opsiones 1 hitoria , 2 astrologia , 3 matematica , 4 pregunta rando"));
+
+if (numero == 1) {
+    var año = Number(prompt("en que  año descubrio cristbal colan america"));
+    if (año == 1492) {
         alert("correxto");
-}else{
+    } else {
+        alert("incorexto fue en 1492")
+    }
+    var rey = prompt("¿Quién fue el rey de España durante el descubrimiento de América?");
+    if (rey.toLowerCase() == "isabel" || rey.toLowerCase() == "isabel i" || rey.toLowerCase() == "isabel la católica") {
+        alert("¡Correcto!");
+    } else {
+        alert("Incorrecto, fue Isabel la Católica");
+    }
+} else if (numero == 2) {
+    var nombre = prompt("cual era el planeta que en realida no es un planeta en el sistemea solar");
+    if (nombre == "pluton") {
+        alert("correxto");
+    } else {
         alert("incorexto es pluton")
+    }
 
-}
-alert("pregunta numero 3")
-var numero = Number(prompt("cuales son los 5 primeros numeros del numero pi"));
-if(numero == 3,1415){
+    var planeta = prompt("¿Cuál es el planeta más grande del sistema solar?");
+    if (planeta.toLowerCase() == "júpiter" || planeta.toLowerCase() == "jupiter") {
+        alert("¡Correcto!");
+    } else {
+        alert("Incorrecto, es Júpiter");
+    }
+
+} else if (numero == 3) {
+    var numero = Number(prompt("cuales son los 5 primeros numeros del numero pi"));
+    if (numero == 3, 1415) {
         alert("correxto");
-}else{
+    } else {
         alert("incorexto es 3,1415")
+    }
+    var suma = Number(prompt("¿Cuánto es 12 x 12?"));
+    if (suma == 144) {
+        alert("¡Correcto!");
+    } else {
+        alert("Incorrecto, es 144");
+    }
+} else if (numero == 4) {
+    var pregunta = prompt("el ser humano ha llegado más alto o más profundo sin usar equipamiento?");
+    if (pregunta == "alto") {
+        alert("correcto");
 
-}
-alert("ultima pregunta")
-
-var pregunta =prompt("el ser humano ha llegado más alto o más profundo sin usar equipamiento?");
-if(pregunta ==  alto){
-    alert("correcto");
-
-}else{
-    alert("incorrexto")
-}
-*/
-
+    } else {
+        alert("incorrexto")
+    }
+    var color = prompt("¿Cuál es el color que resulta de mezclar rojo y azul?");
+    if (color.toLowerCase() == "morado" || color.toLowerCase() == "púrpura") {
+        alert("¡Correcto!");
+    } else {
+        alert("Incorrecto, es morado o púrpura");
+    }
+} else {
+    alert("valor introducido incorrexto escoge entre 1y 4")
+};
 
 
 // 8.  Crear un menú contextual. Se repite hasta que el usuario elige la opción “Salir”.
-/*
+
 let x
 let y
 let numero;
-do{
-console.log("menu")
-console.log("1. suma");
-console.log("2.multiplicar");
-console.log("3.salir");
- numero = Number(prompt("es coge un numero para moverte por el menu"));
- if(numero ==1){
-     x = Number(prompt("introduce un numero"));
-     y = Number(prompt("introduce otro numero"))
- }else if(numero ==2){
-     x = Number(prompt("introduce un numero"));
-     y = Number(prompt("introduce otro numero")
- } else {
-    alert("error");
- }
-}while(numero!=3);
-*/
+do {
+    console.log("menu")
+    console.log("1. suma");
+    console.log("2.multiplicar");
+    console.log("3.salir");
+    numero = Number(prompt("es coge un numero para moverte por el menu"));
+    if (numero == 1) {
+        x = Number(prompt("introduce un numero"));
+        y = Number(prompt("introduce otro numero"))
+    } else if (numero == 2) {
+        x = Number(prompt("introduce un numero"));
+        y = Number(prompt("introduce otro numero"));
+    } else {
+        alert("error");
+    }
+} while (numero != 3);
+
 
 // 9.  Crear el juego de piedra papel o tijera. (Podemos investigar math.random()).
-/*
+
 var numero = Math.floor(Math.random() * 3) + 1;
 var pruba = Number(prompt("intro duce 1. para piedar , 2. para tiegera , 3. papel "))
 if (numero == 1) {
@@ -184,7 +204,7 @@ if (numero == 1) {
     alert("es incorexto")
 
 }
-*/
+
 
 // 10. Mostrar los primeros 100 números primos.
 
@@ -208,32 +228,16 @@ while (n <= 100) {
 }
 
 
-//11 navasesh
-/*
-function navasesh(numero) {
-    while (numero >= 10) {
-        let suma = 10
-        let n = numero;
-        while (n > 0) {
-            suma + (n % 10);
-            n = Math.floor(n / 10)
-        }
-        numero = suma;
-    }
-    returnnumero
-}
-let numero = Number(prompt("introduce el numero para calcualra el navash"))
-console.log (navasesh(numero))
-*/
 
+//11 navasesh
 numero = Number(prompt("introduce invertido"))
 
-while (numero >=10){
+while (numero >= 10) {
     var adittion = 0;
-    while(numero >0){
-        adittion + numero %10
+    while (numero > 0) {
+        adittion + numero % 10
         numero = adittion;
     }
     numero = adittion;
 }
-alert("la suma es "+adition);
+alert("la suma es " + adition);
