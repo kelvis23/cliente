@@ -78,66 +78,67 @@ alert(numero + " es el numero corexto");
 
 // 7.  Jugando un poco con la consola: Aventura conversacional/juego de preguntas y respuestas.
 
-var numero = Number(prompt("esto es un  concursos de pereguntas y respuestas  es coge las opsiones 1 hitoria , 2 astrologia , 3 matematica , 4 pregunta rando"));
+var numero = Number(prompt("Esto es un concurso de preguntas y respuestas. Elige una opción: 1 Historia, 2 Astrología, 3 Matemática, 4 Preguntas Random"));
 
 if (numero == 1) {
-    var año = Number(prompt("en que  año descubrio cristbal colan america"));
-    if (año == 1492) {
-        alert("correxto");
+    var año = Number(prompt("¿En qué año descubrió Cristóbal Colón América?"));
+    if (año === 1492) {
+        alert("Correcto");
     } else {
-        alert("incorexto fue en 1492")
+        alert("Incorrecto, fue en 1492");
     }
-    var rey = prompt("¿Quién fue el rey de España durante el descubrimiento de América?");
-    if (rey.toLowerCase() == "isabel" || rey.toLowerCase() == "isabel i" || rey.toLowerCase() == "isabel la católica") {
+    var rey = prompt("¿Quién fue el rey o reina de España durante el descubrimiento de América?");
+    if (rey.toLowerCase() === "isabel" || rey.toLowerCase() === "isabel i" || rey.toLowerCase() === "isabel la católica") {
         alert("¡Correcto!");
     } else {
         alert("Incorrecto, fue Isabel la Católica");
     }
 } else if (numero == 2) {
-    var nombre = prompt("cual era el planeta que en realida no es un planeta en el sistemea solar");
-    if (nombre == "pluton") {
-        alert("correxto");
+    var nombre = prompt("¿Cuál era el planeta que en realidad no es considerado planeta en el sistema solar?");
+    if (nombre.toLowerCase() === "plutón" || nombre.toLowerCase() === "pluton") {
+        alert("Correcto");
     } else {
-        alert("incorexto es pluton")
+        alert("Incorrecto, es Plutón");
     }
 
     var planeta = prompt("¿Cuál es el planeta más grande del sistema solar?");
-    if (planeta.toLowerCase() == "júpiter" || planeta.toLowerCase() == "jupiter") {
+    if (planeta.toLowerCase() === "júpiter" || planeta.toLowerCase() === "jupiter") {
         alert("¡Correcto!");
     } else {
         alert("Incorrecto, es Júpiter");
     }
 
 } else if (numero == 3) {
-    var numero = Number(prompt("cuales son los 5 primeros numeros del numero pi"));
-    if (numero == 3, 1415) {
-        alert("correxto");
+    var pi = prompt("¿Cuáles son los primeros 5 números de Pi? (Ejemplo: 3.1415)");
+    // Comparar como string para evitar problemas de precisión
+    if (pi === "3.1415") {
+        alert("Correcto");
     } else {
-        alert("incorexto es 3,1415")
+        alert("Incorrecto, es 3.1415");
     }
     var suma = Number(prompt("¿Cuánto es 12 x 12?"));
-    if (suma == 144) {
+    if (suma === 144) {
         alert("¡Correcto!");
     } else {
         alert("Incorrecto, es 144");
     }
 } else if (numero == 4) {
-    var pregunta = prompt("el ser humano ha llegado más alto o más profundo sin usar equipamiento?");
-    if (pregunta == "alto") {
-        alert("correcto");
-
+    var pregunta = prompt("¿El ser humano ha llegado más alto o más profundo sin usar equipamiento?");
+    if (pregunta.toLowerCase() === "alto") {
+        alert("Correcto");
     } else {
-        alert("incorrexto")
+        alert("Incorrecto");
     }
     var color = prompt("¿Cuál es el color que resulta de mezclar rojo y azul?");
-    if (color.toLowerCase() == "morado" || color.toLowerCase() == "púrpura") {
+    if (color.toLowerCase() === "morado" || color.toLowerCase() === "púrpura") {
         alert("¡Correcto!");
     } else {
         alert("Incorrecto, es morado o púrpura");
     }
 } else {
-    alert("valor introducido incorrexto escoge entre 1y 4")
-};
+    alert("Valor introducido incorrecto, escoge entre 1 y 4");
+}
+
 
 
 // 8.  Crear un menú contextual. Se repite hasta que el usuario elige la opción “Salir”.
