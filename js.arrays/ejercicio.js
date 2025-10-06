@@ -73,11 +73,15 @@ console.log("la media "+media )
 
 // Crea un array de 10 valores introducidos por teclado y devuelvelo ordenado (SIN FUNCIONES).
 
-var array = []
-for (let i = 0; i < 10; i++) {
-    let numero = Number(prompt("introduce  los numeros introducir"));
+var array =[]
+for (i = 0; i < 10; i++) {
+let numero = Number(prompt("introduce  los numeros introducir"));
     array.push(numero)
-    for (let j = 0; j < 10 - 1 - i; j++) {
+   
+}
+
+for (i = 0; i < 10; i++) {
+   for ( j = 0; j < array.length - 1 - i; j++) {
         if (array[j] > array[j + 1]) {
             temp = array[j];
             array[j] = array[j + 1];
@@ -86,12 +90,8 @@ for (let i = 0; i < 10; i++) {
         }
     }
 }
-
-for (const x of array) {
+  for (const x of array) {
      console.log(x);
  }
 
-
-
-
-// Crea dos arrays de números arr1 y arr2 con 5 elementos cada uno. Recorre ambos arrays y cuenta cuántos elementos son iguales y están en la misma posición. Imprime el resultado.
+// Crea dos arrays de números arr1 y arr2 con 5 elementos cada uno. Recorre ambos arrays y cuenta cuántos elementos son iguales y están en la misma posición. Imprime el resultado.y
