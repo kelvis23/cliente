@@ -36,7 +36,7 @@ var encontrado = false;
 var posicion = -1;
 
 // Buscar si el usuario existe
-for (var i = 0; i < usuarios.length; i++) {
+/*for (var i = 0; i < usuarios.length; i++) {
   if (usuarios[i] === usuario) {
     encontrado = true;
     posicion = i;
@@ -67,19 +67,57 @@ if (!encontrado) {
 
   }
 }
+*/
 do {
   alert("menu")
-  option = Number(prompt("1.suma , 2.multiplicasion , 3.salir"))
+  option = Number(prompt("1.crear usuario \n" + "2.entrar \n" + "3.mostrar usuarios\n"+"4.salir" ))
   if (option == 1) {
+    var usuario = prompt("introduce el nombre del usuario a crear")
 
+    // Buscar si el usuario existe
+    for (var i = 0; i < usuarios.length; i++) {
+      if (usuarios[i] === usuario) {
+        encontrado = true;
+        posicion = i;
+      }
+
+      if (!encontrado) {
+        alert("el usario no existe creando un nuevo usuario")
+        var number = Number(prompt("introduce una contraseñas"))
+        contraseñas.push(number)
+        usuarios.push(usuario)
+        alert("el usuario se a creado")
+        alert("Bienbenido " + usuario);
+      } else {
+        alert("el usuario " + number + " ya existe")
+      }
+    }
   } else if (option == 2) {
-    var number = Number
-  } else if (option == 3) {
+    let intentos = 3;
+    while (intentos > 0) {
+      let number = Number(prompt("introduce la contraseñas"))
+      if (number === contraseñas[posicion]) {
+        alert("Bienbenido " + usuario);
+        intentos = 0;
+      } else {
+        intentos--;
+        if (intentos > 0) {
+          alert("Contraseña incorrecta. Te quedan " + intentos + " intento(s).");
+        } else {
+          alert("Demasiados intentos. Acceso denegado.");
+        }
+      }
+    }
+  }else if(option==3){
+    for (const x of usuarios) {
+     console.log(x);
+ }
+  } else if (option == 4) {
     alert("saliendo ...")
   } else {
     alert("error")
   }
-} while (option != 3);
+} while (option != 4);
 
 
 // Crea una lista de notas. Calcula la media total y la media sólo de los aprobados. BONUS si se hace con y sin numeross.
