@@ -1,7 +1,7 @@
 
 
 // Se le pide al usuario el número de valores a introducir. Posteriormente se le van pidiendo. Se le devuelven ordenados. ¿Cómo? 😮
-
+/*
 
 var valor = Number(prompt("introduce  la cantidad de valores que vas a introducir"));
 
@@ -24,42 +24,63 @@ for( let i = 0 ; i<valor;i++){
  for (const x of numeros) {
      console.log(x);
  }
-
+*/
 
 // Sistema de inicio de sesión y registro con numeross (menú incluído).
-/*
-var usuarios =["kelvis","pepe"]
-var contraseña =["1234","km190"]
+
+var usuarios = ["kelvis", "pepe"]
+var contraseñas = [1234, 190]
 var option;
-var usuario=prompt("introduce el nombre de usuario")
-for(i =0 ; i<usuario.length;i++){
-if(usuario  != usuarios[i]){
-    alert ("el usario no existe creando un nuevo usuario")
-    number = prompt ("introduce una contraseña")
-    contraseña.push(number)
-    usuarios.push(usuario)
-  }else{
-    alert("bien venido "+usuario)
-    number = prompt ("introduce la contraseña")
-    while(number != contraseña[i]){
-       number = prompt ("contraseña incorecta introduce de nuevo la contraseña")
-    }
+var usuario = prompt("introduce el nombre de usuario")
+var encontrado = false;
+var posicion = -1;
+
+// Buscar si el usuario existe
+for (var i = 0; i < usuarios.length; i++) {
+  if (usuarios[i] === usuario) {
+    encontrado = true;
+    posicion = i;
   }
 }
-do{
-alert("menu")
-option= Number(prompt("1.suma , 2.multiplicasion , 3.salir"))
-if(option ==1){
+if (!encontrado) {
+  alert("el usario no existe creando un nuevo usuario")
+  var number = Number(prompt("introduce una contraseñas"))
+  contraseñas.push(number)
+  usuarios.push(usuario)
+  alert("el usuario se a creado")
+  alert("Bienbenido " + usuario);
+} else {
+  let intentos = 3;
+  while (intentos > 0) {
+    let number = Number(prompt("introduce la contraseñas"))
+    if (number === contraseñas[posicion]) {
+      alert("Bienbenido " + usuario);
+      intentos = 0;
+    } else {
+      intentos--;
+      if (intentos > 0) {
+        alert("Contraseña incorrecta. Te quedan " + intentos + " intento(s).");
+      } else {
+        alert("Demasiados intentos. Acceso denegado.");
+      }
+    }
 
-}else if(option==2){
-
-}else if (option==3){
-alert("saliendo ...")
-}else{
-  alert("error")
+  }
 }
-}while(option !=3);
-*/
+do {
+  alert("menu")
+  option = Number(prompt("1.suma , 2.multiplicasion , 3.salir"))
+  if (option == 1) {
+
+  } else if (option == 2) {
+    var number = Number
+  } else if (option == 3) {
+    alert("saliendo ...")
+  } else {
+    alert("error")
+  }
+} while (option != 3);
+
 
 // Crea una lista de notas. Calcula la media total y la media sólo de los aprobados. BONUS si se hace con y sin numeross.
 
@@ -74,7 +95,7 @@ alert("saliendo ...")
 
 var media =suma/notas.length;
 console.log("la media "+media )
- 
+
 //media de aprovados
 let numero = 0;
  let suma1 =0 ;
@@ -88,11 +109,11 @@ let numero = 0;
   }
    var media =suma1/numero;
 console.log("la media "+media )
- 
-  
+
+
 //sin arrys
 
- 
+
  var numero1 = 8;
  var numero2 = 2;
  var numero3 = 5;
