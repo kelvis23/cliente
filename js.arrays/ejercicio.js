@@ -72,26 +72,38 @@ console.log("la media "+media )
 
 
 // Crea un array de 10 valores introducidos por teclado y devuelvelo ordenado (SIN FUNCIONES).
-
-var array =[]
+/*
+var array = []
 for (i = 0; i < 10; i++) {
-let numero = Number(prompt("introduce  los numeros introducir"));
-    array.push(numero)
-   
+  let numero = Number(prompt("introduce  los numeros introducir"));
+  array.push(numero)
+
 }
 
 for (i = 0; i < 10; i++) {
-   for ( j = 0; j < array.length - 1 - i; j++) {
-        if (array[j] > array[j + 1]) {
-            temp = array[j];
-            array[j] = array[j + 1];
-            array[j + 1] = temp;
-            
-        }
+  for (j = 0; j < array.length - 1 - i; j++) {
+    if (array[j] > array[j + 1]) {
+      temp = array[j];
+      array[j] = array[j + 1];
+      array[j + 1] = temp;
+
     }
+  }
 }
-  for (const x of array) {
-     console.log(x);
- }
+for (const x of array) {
+  console.log(x);
+}
+*/
 
-// Crea dos arrays de números arr1 y arr2 con 5 elementos cada uno. Recorre ambos arrays y cuenta cuántos elementos son iguales y están en la misma posición. Imprime el resultado.y
+// Crea dos arrays de números arr1 y arr2 con 5 elementos cada uno. Recorre ambos arrays y cuenta cuántos elementos son iguales y están en la misma posición. Imprime el resultado.
+
+var arr1 = [4, 6, 2, 1, 0];
+var arr2 = [18, 4, 2, 1, 8];
+var count = 0;
+for(i=0;i<arr1.length;i++){
+  if(arr1[i] ==arr2[i]){
+    count++
+  }
+}
+
+alert("hay "+ count+" elementos iguales en ambos arrys")
