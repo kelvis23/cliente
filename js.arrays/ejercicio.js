@@ -2,7 +2,7 @@
 
 // Se le pide al usuario el número de valores a introducir. Posteriormente se le van pidiendo. Se le devuelven ordenados. ¿Cómo? 😮
 
-/*
+
 var valor = Number(prompt("introduce  la cantidad de valores que vas a introducir"));
 
 let numeros = [];
@@ -10,16 +10,60 @@ for( let i = 0 ; i<valor;i++){
     let numero = Number(prompt("introduce  "));
  numeros.push(numero)
 }
+
+ for (i = 0; i < numeros.length; i++) {
+  for (j = 0; j < numeros.length - 1 - i; j++) {
+    if (numeros[j] > numeros[j + 1]) {
+      temp = numeros[j];
+      numeros[j] = numeros[j + 1];
+      numeros[j + 1] = temp;
+
+    }
+  }
+}
  for (const x of numeros) {
      console.log(x);
  }
- */
 
-// Sistema de inicio de sesión y registro con arrays (menú incluído).
 
-// Crea una lista de notas. Calcula la media total y la media sólo de los aprobados. BONUS si se hace con y sin arrays.
+// Sistema de inicio de sesión y registro con numeross (menú incluído).
+/*
+var usuarios =["kelvis","pepe"]
+var contraseña =["1234","km190"]
+var option;
+var usuario=prompt("introduce el nombre de usuario")
+for(i =0 ; i<usuario.length;i++){
+if(usuario  != usuarios[i]){
+    alert ("el usario no existe creando un nuevo usuario")
+    number = prompt ("introduce una contraseña")
+    contraseña.push(number)
+    usuarios.push(usuario)
+  }else{
+    alert("bien venido "+usuario)
+    number = prompt ("introduce la contraseña")
+    while(number != contraseña[i]){
+       number = prompt ("contraseña incorecta introduce de nuevo la contraseña")
+    }
+  }
+}
+do{
+alert("menu")
+option= Number(prompt("1.suma , 2.multiplicasion , 3.salir"))
+if(option ==1){
 
-//con array
+}else if(option==2){
+
+}else if (option==3){
+alert("saliendo ...")
+}else{
+  alert("error")
+}
+}while(option !=3);
+*/
+
+// Crea una lista de notas. Calcula la media total y la media sólo de los aprobados. BONUS si se hace con y sin numeross.
+
+//con numeros
 /*
   var notas =[8,2,5,6,10,1,4,5];
  let suma =0 ;
@@ -68,35 +112,35 @@ console.log("la media "+media )
    console.log(suma3)
     console.log("la media "+media );
 
+
 */
 
-
-// Crea un array de 10 valores introducidos por teclado y devuelvelo ordenado (SIN FUNCIONES).
+// Crea un numeros de 10 valores introducidos por teclado y devuelvelo ordenado (SIN FUNCIONES).
 /*
-var array = []
+var numeros = []
 for (i = 0; i < 10; i++) {
   let numero = Number(prompt("introduce  los numeros introducir"));
-  array.push(numero)
+  numeros.push(numero)
 
 }
 
 for (i = 0; i < 10; i++) {
-  for (j = 0; j < array.length - 1 - i; j++) {
-    if (array[j] > array[j + 1]) {
-      temp = array[j];
-      array[j] = array[j + 1];
-      array[j + 1] = temp;
+  for (j = 0; j < numeros.length - 1 - i; j++) {
+    if (numeros[j] > numeros[j + 1]) {
+      temp = numeros[j];
+      numeros[j] = numeros[j + 1];
+      numeros[j + 1] = temp;
 
     }
   }
 }
-for (const x of array) {
+for (const x of numeros) {
   console.log(x);
 }
 */
 
-// Crea dos arrays de números arr1 y arr2 con 5 elementos cada uno. Recorre ambos arrays y cuenta cuántos elementos son iguales y están en la misma posición. Imprime el resultado.
-
+// Crea dos numeross de números arr1 y arr2 con 5 elementos cada uno. Recorre ambos numeross y cuenta cuántos elementos son iguales y están en la misma posición. Imprime el resultado.
+/*
 var arr1 = [4, 6, 2, 1, 0];
 var arr2 = [18, 4, 2, 1, 8];
 var count = 0;
@@ -107,3 +151,5 @@ for(i=0;i<arr1.length;i++){
 }
 
 alert("hay "+ count+" elementos iguales en ambos arrys")
+
+*/
