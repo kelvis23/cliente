@@ -2,32 +2,32 @@
 
 // Se le pide al usuario el número de valores a introducir. Posteriormente se le van pidiendo. Se le devuelven ordenados. ¿Cómo? 😮
 
-/*
+
 var valor = Number(prompt("introduce  la cantidad de valores que vas a introducir"));
 
-let numeros = [];
+let numeros1 = [];
 for( let i = 0 ; i<valor;i++){
     let numero = Number(prompt("introduce  "));
- numeros[i]=numero;
+ numeros1[i]=numero;
 }
 
- for (i = 0; i < numeros.length -1 ; i++) {
-  for (j = 0; j < numeros.length - 1 - i; j++) {
-    if (numeros[j] > numeros[j + 1]) {
-      temp = numeros[j];
-      numeros[j] = numeros[j + 1];
-      numeros[j + 1] = temp;
+ for (i = 0; i < numeros1.length -1 ; i++) {
+  for (j = 0; j < numeros1.length - 1 - i; j++) {
+    if (numeros1[j] > numeros1[j + 1]) {
+      temp = numeros1[j];
+      numeros1[j] = numero1[j + 1];
+      numeros1[j + 1] = temp;
 
     }
   }
 }
- for (const x of numeros) {
+ for (const x of numeros1) {
      console.log(x);
  }
 
-*/
+
 // Sistema de inicio de sesión y registro con numeross (menú incluído).
-/*
+
 var usuarios = ["kelvis", "pepe"];
 var contraseñas = [1234, 190];
 var option;
@@ -121,12 +121,12 @@ do {
 
 } while (option !== 4);
 
-*/
+
 
 // Crea una lista de notas. Calcula la media total y la media sólo de los aprobados. BONUS si se hace con y sin numeross.
 
 //con numeros
-/*
+
   var notas =[8,2,5,6,10,1,4,5];
  let suma =0 ;
  for( let i = 0 ; i<notas.length;i++){
@@ -175,10 +175,10 @@ console.log("la media "+media )
     console.log("la media "+media );
 
 
-*/
+
 
 // Crea un numeros de 10 valores introducidos por teclado y devuelvelo ordenado (SIN FUNCIONES).
-/*
+
 var numeros = []
 for (i = 0; i < 10; i++) {
   let numero = Number(prompt("introduce  los numeros introducir"));
@@ -199,10 +199,10 @@ for (i = 0; i < 10; i++) {
 for (const x of numeros) {
   console.log(x);
 }
-*/
+
 
 // Crea dos numeross de números arr1 y arr2 con 5 elementos cada uno. Recorre ambos numeross y cuenta cuántos elementos son iguales y están en la misma posición. Imprime el resultado.
-/*
+
 var arr1 = [4, 6, 2, 1, 0];
 var arr2 = [18, 4, 2, 1, 8];
 var count = 0;
@@ -214,4 +214,3 @@ for(i=0;i<arr1.length;i++){
 
 alert("hay "+ count+" elementos iguales en ambos arrys")
 
-*/
