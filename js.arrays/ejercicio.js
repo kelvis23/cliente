@@ -27,7 +27,7 @@ for( let i = 0 ; i<valor;i++){
 */
 
 // Sistema de inicio de sesión y registro con numeross (menú incluído).
-
+/*
 var usuarios = ["kelvis", "pepe"];
 var contraseñas = [1234, 190];
 var option;
@@ -47,6 +47,8 @@ do {
     var nuevoUsuario = prompt("Introduce el nombre del usuario a crear:");
     var encontrado = false;
 
+
+    // bandera : comprobar  si el usuario existe 
     for (var i = 0; i < usuarios.length; i++) {
       if (usuarios[i] === nuevoUsuario) {
         encontrado = true;
@@ -68,6 +70,7 @@ do {
     var usuarioLogin = prompt("Introduce el nombre del usuario:");
     var posicion = -1;
 
+    // bandera : comprobar  si el usuario existe 
     for (var i = 0; i < usuarios.length; i++) {
       if (usuarios[i] === usuarioLogin && posicion === -1) {
         posicion = i;
@@ -79,7 +82,7 @@ do {
     } else {
       let intentos = 3;
       let accesoConcedido = false;
-
+      // registrar conraseña
       while (intentos > 0 && !accesoConcedido) {
         let contra = Number(prompt("Introduce la contraseña:"));
 
