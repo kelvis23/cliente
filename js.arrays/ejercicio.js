@@ -1,17 +1,17 @@
 
 
 // Se le pide al usuario el número de valores a introducir. Posteriormente se le van pidiendo. Se le devuelven ordenados. ¿Cómo? 😮
-/*
 
+/*
 var valor = Number(prompt("introduce  la cantidad de valores que vas a introducir"));
 
 let numeros = [];
 for( let i = 0 ; i<valor;i++){
     let numero = Number(prompt("introduce  "));
- numeros.push(numero)
+ numeros[i]=numero;
 }
 
- for (i = 0; i < numeros.length; i++) {
+ for (i = 0; i < numeros.length -1 ; i++) {
   for (j = 0; j < numeros.length - 1 - i; j++) {
     if (numeros[j] > numeros[j + 1]) {
       temp = numeros[j];
@@ -24,8 +24,8 @@ for( let i = 0 ; i<valor;i++){
  for (const x of numeros) {
      console.log(x);
  }
-*/
 
+*/
 // Sistema de inicio de sesión y registro con numeross (menú incluído).
 /*
 var usuarios = ["kelvis", "pepe"];
@@ -121,7 +121,7 @@ do {
 
 } while (option !== 4);
 
-
+*/
 
 // Crea una lista de notas. Calcula la media total y la media sólo de los aprobados. BONUS si se hace con y sin numeross.
 
