@@ -28,86 +28,63 @@ for( let i = 0 ; i<valor;i++){
 
 // Sistema de inicio de sesión y registro con numeross (menú incluído).
 
-var usuarios = ["kelvis", "pepe"]
-var contraseñas = [1234, 190]
+var usuarios = ["kelvis", "pepe"];
+var contraseñas = [1234, 190];
 var option;
-//var usuario = prompt("introduce el nombre de usuario")
 
-
-
-// Buscar si el usuario existe
-/*for (var i = 0; i < usuarios.length; i++) {
-  if (usuarios[i] === usuario) {
-    encontrado = true;
-    posicion = i;
-  }
-}
-if (!encontrado) {
-  alert("el usario no existe creando un nuevo usuario")
-  var number = Number(prompt("introduce una contraseñas"))
-  contraseñas.push(number)
-  usuarios.push(usuario)
-  alert("el usuario se a creado")
-  alert("Bienbenido " + usuario);
-} else {
-  let intentos = 3;
-  while (intentos > 0) {
-    let number = Number(prompt("introduce la contraseñas"))
-    if (number === contraseñas[posicion]) {
-      alert("Bienbenido " + usuario);
-      intentos = 0;
-    } else {
-      intentos--;
-      if (intentos > 0) {
-        alert("Contraseña incorrecta. Te quedan " + intentos + " intento(s).");
-      } else {
-        alert("Demasiados intentos. Acceso denegado.");
-      }
-    }
-
-  }
-}
-*/
 do {
-  alert("menu")
-  option = Number(prompt("1.crear usuario \n" + "2.entrar \n" + "3.mostrar usuarios\n" + "4.salir"))
-  if (option == 1) {
-    var usuario = prompt("introduce el nombre del usuario a crear")
+  alert("MENÚ");
+  option = Number(prompt(
+    "Selecciona una opción:\n" +
+    "1. Crear usuario\n" +
+    "2. Entrar\n" +
+    "3. Mostrar usuarios\n" +
+    "4. Salir"
+  ));
+
+  if (option === 1) {
+    // CREAR USUARIO
+    var nuevoUsuario = prompt("Introduce el nombre del usuario a crear:");
     var encontrado = false;
-    // Buscar si el usuario existe
+
     for (var i = 0; i < usuarios.length; i++) {
-      if (usuarios[i] === usuario) {
+      if (usuarios[i] === nuevoUsuario) {
         encontrado = true;
       }
-
-      if (!encontrado) {
-        alert("el usario no existe creando un nuevo usuario")
-        var number = Number(prompt("introduce una contraseñas"))
-        contraseñas.push(number)
-        usuarios.push(usuario)
-        alert("el usuario se a creado")
-        alert("Bienbenido " + usuario);
-      } else {
-        alert("el usuario " + number + " ya existe")
-      }
     }
-  } else if (option == 2) {
-    var usuario = prompt("introduce el nombre del usuario")
+
+    if (!encontrado) {
+      var nuevaContra = Number(prompt("Introduce una contraseña para " + nuevoUsuario + ":"));
+      usuarios.push(nuevoUsuario);
+      contraseñas.push(nuevaContra);
+      alert("El usuario '" + nuevoUsuario + "' ha sido creado exitosamente.");
+      alert("Bienvenido, " + nuevoUsuario + "!");
+    } else {
+      alert("El usuario '" + nuevoUsuario + "' ya existe.");
+    }
+
+  } else if (option === 2) {
+    // INICIAR SESIÓN
+    var usuarioLogin = prompt("Introduce el nombre del usuario:");
     var posicion = -1;
-    for (let i = 0; i < usuarios.length; i++) {
-      if (usuarios[i] === usuarioLogin) {
+
+    for (var i = 0; i < usuarios.length; i++) {
+      if (usuarios[i] === usuarioLogin && posicion === -1) {
         posicion = i;
       }
     }
+
     if (posicion === -1) {
       alert("El usuario no existe.");
     } else {
-      let accesoConcedido = false;
       let intentos = 3;
+      let accesoConcedido = false;
+
       while (intentos > 0 && !accesoConcedido) {
-        let number = Number(prompt("introduce la contraseñas"))
-        if (number === contraseñas[posicion]) {
-          alert("Bienbenido " + usuario);
+        let contra = Number(prompt("Introduce la contraseña:"));
+
+        if (contra === contraseñas[posicion]) {
+          alert("Bienvenido, " + usuarioLogin + "!");
           accesoConcedido = true;
         } else {
           intentos--;
@@ -119,22 +96,28 @@ do {
         }
       }
     }
-  } else if (option == 3) {
+
+  } else if (option === 3) {
+    // MOSTRAR USUARIOS
     if (usuarios.length === 0) {
       alert("No hay usuarios registrados.");
     } else {
       let lista = "Usuarios registrados:\n";
-      for (const user of usuarios) {
-        lista += "- " + user + "\n";
+      for (var i = 0; i < usuarios.length; i++) {
+        lista += "- " + usuarios[i] + "\n";
       }
       alert(lista);
     }
-  } else if (option == 4) {
-    alert("saliendo ...")
+
+  } else if (option === 4) {
+    // SALIR
+    alert("Saliendo del programa...");
   } else {
-    alert("error")
+    alert("Opción no válida. Intenta de nuevo.");
   }
-} while (option != 4);
+
+} while (option !== 4);
+
 
 
 // Crea una lista de notas. Calcula la media total y la media sólo de los aprobados. BONUS si se hace con y sin numeross.
