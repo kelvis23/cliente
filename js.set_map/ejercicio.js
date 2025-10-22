@@ -18,7 +18,11 @@ console.log(arr1)
 setA = new Set([1, 2, 3, 4]);
 setB = new Set([3, 4, 5, 6]);
 
-const commonElements = new Set(
+//  [...setA] convierte el conjunto setA en un arreglo (array). Esto es para poder usar métodos de arrays como .filter().
+//.filter(x => setB.has(x)) recorre ese arreglo, y para cada elemento x, verifica si también está en setB con setB.has(x).
+//Solo se mantienen los elementos que existen en ambos conjuntos.
+//new Set(...) convierte el resultado filtrado  de nuevo a un conjunto (Set).
+ commonElements = new Set(
   [...setA].filter(x => setB.has(x))
 );
 
@@ -120,5 +124,3 @@ do {
 
 
 // BONUS Pide tres conjuntos al usuario por teclado e indica cuáles no se repiten
-
-
