@@ -44,7 +44,7 @@ if (count >= 1) {
 }
   */
 //En un programa con un array predefinido con varios nombres, pedirle uno al usuario y comprobar si está o no.
-
+/*
 var arr3 = ["cesar", "andrea", "kelvis", "jesus", "ana", "pedro", "juan", "maria", "karla"];
 var usuario = prompt("introduce un nombre");
 
@@ -53,20 +53,29 @@ if (arr3.includes(usuario2)) {
 } else {
   alert("en el array no existe el nombre " + usuario)
 }
-
+*/
 //Crea un menú que controle los datos de un array (como una lista de la compra), que permita añadir al final o al principio, eliminar alguno si existe o borrar todos, y a cada paso actualice (o vuelva a mostrar) la lista completa.
-var list = []
+
+/*var list = []
 do {
   opt = Number(prompt("-- control de datos -- \n"))
 } while (option != 4);
+*/
 //Dado un array con precios, aplicar a todos un descuento indicado por prompt.
 
 var descuento = Number(prompt("introduce el descuento"))
 var arr5 = [21, 5, 34, 6, 10, 7, 1, 5]
-let revaja = descuento * 0.01
+let rebaja = descuento * 0.01
+var preciosConDescuento = []
+for(const x of arr5){
+ var presiodescuento= x - (x * rebaja);
+preciosConDescuento.push(presiodescuento);
+}
+console.log("Precios originales:", arr5);
+console.log("Precios con descuento:", preciosConDescuento);
 
 //BONUS: Reutiliza el ejercicio 1 y posteriormente devuelve el array ordenado.
-
+/*
 var arr6 = [];
 var numero = Number(prompt("introduce un numero"))
 
@@ -79,4 +88,4 @@ while (numero != 0) {
 for (const x of arr1) {
   console.log(arr1)
 }
-
+*/
