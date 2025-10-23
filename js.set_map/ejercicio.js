@@ -31,7 +31,10 @@ console.log(commonElements);
 // Copia el ejercicio del menú de inicio de sesión y convierte los arrays en un mapa.
 
 
-var usuarios = new Map([["kelvis",1234],["pepe",190]]);
+var usuarios = new Map([
+  ["kelvis",1234],
+  ["pepe",190]
+]);
 var option;
 
 do {
