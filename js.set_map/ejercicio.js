@@ -1,20 +1,14 @@
 //Tenemos un array de números para hacer un sorteo, pero algún@ list@ ha metido su número más de una vez. 
 // Asegúrate de que ese array elimina sus duplicados pasándolo a Set
 /*
-var arr1 = new Set();
-arr1.add(231);
-arr1.add(117);
-arr1.add(106);
-arr1.add(501);
-arr1.add(122);
-arr1.add(231);
-
-console.log(arr1)
+var arr1 = [231, 117, 106, 501, 122, 231];
+let set1 = new Set(arr1)
+console.log(set1)
 */
 //- Dados el setA = new Set([1,2,3,4]) y el setB = new Set([3,4,5,6]) devuelve un set que contenga 
 // los elementos comunes en los dos anteriores 
 // (usando la función filter que vimos con los arrays)
-/*
+
 setA = new Set([1, 2, 3, 4]);
 setB = new Set([3, 4, 5, 6]);
 
@@ -22,18 +16,18 @@ setB = new Set([3, 4, 5, 6]);
 //.filter(x => setB.has(x)) recorre ese arreglo, y para cada elemento x, verifica si también está en setB con setB.has(x).
 //Solo se mantienen los elementos que existen en ambos conjuntos.
 //new Set(...) convierte el resultado filtrado  de nuevo a un conjunto (Set).
- commonElements = new Set(
+commonElements = new Set(
   [...setA].filter(x => setB.has(x))
 );
 
-console.log(commonElements); 
-*/
+console.log(commonElements);
+
 // Copia el ejercicio del menú de inicio de sesión y convierte los arrays en un mapa.
 
-
+/*
 var usuarios = new Map([
-  ["kelvis",1234],
-  ["pepe",190]
+  ["kelvis", 1234],
+  ["pepe", 190]
 ]);
 var option;
 
@@ -50,47 +44,35 @@ do {
   if (option === 1) {
     // CREAR USUARIO
     var nuevoUsuario = prompt("Introduce el nombre del usuario a crear:");
-    var encontrado = false;
 
 
-    // bandera : comprobar  si el usuario existe 
-    for (var i = 0; i < usuarios.length; i++) {
-      if (usuarios[i] === nuevoUsuario) {
-        encontrado = true;
-      }
-    }
+    // bandera : comprobar  si el usuario existe
 
-    if (!encontrado) {
+      if (usuarios.has(nuevoUsuario)) {
+         alert("El usuario '" + nuevoUsuario + "' ya existe.");
+      }else  {
       var nuevaContra = Number(prompt("Introduce una contraseña para " + nuevoUsuario + ":"));
-        usuarios.set(nuevoUsuario, nuevaContra);
+      usuarios.set(nuevoUsuario, nuevaContra);
       alert("El usuario '" + nuevoUsuario + "' ha sido creado exitosamente.");
       alert("Bienvenido, " + nuevoUsuario + "!");
-    } else {
-      alert("El usuario '" + nuevoUsuario + "' ya existe.");
     }
 
   } else if (option === 2) {
     // INICIAR SESIÓN
     var usuarioLogin = prompt("Introduce el nombre del usuario:");
-    var posicion = -1;
 
-    // bandera : comprobar  si el usuario existe 
-    for (var i = 0; i < usuarios.length; i++) {
-      if (usuarios[i] === usuarioLogin && posicion === -1) {
-        posicion = i;
-      }
-    }
 
-    if (posicion === -1) {
-      alert("El usuario no existe.");
-    } else {
+    // bandera : comprobar  si el usuario existe
+      if (!usuarios.has(nuevoUsuario)) {
+        alert("El usuario no existe.");
+      }else {
       let intentos = 3;
       let accesoConcedido = false;
       // registrar conraseña
       while (intentos > 0 && !accesoConcedido) {
         let contra = Number(prompt("Introduce la contraseña:"));
 
-        if (contra === usuarios[posicion]) {
+        if (contra === usuarios.get(usuarioLogin)) {
           alert("Bienvenido, " + usuarioLogin + "!");
           accesoConcedido = true;
         } else {
@@ -106,12 +88,13 @@ do {
 
   } else if (option === 3) {
     // MOSTRAR USUARIOS
-    if (usuarios.length === 0) {
+    //El sizeAccesorio propiedad de MapLas instancias devuelven el número de elementos de este mapa.
+    if (usuarios.size === 0) {
       alert("No hay usuarios registrados.");
     } else {
       let lista = "Usuarios registrados:\n";
-      for (var i = 0; i < usuarios.length; i++) {
-        lista += "- " + usuarios[i] + "\n";
+      for (let [nombre] of usuarios) {
+        lista += "- " + nombre + "\n";
       }
       alert(lista);
     }
@@ -125,5 +108,21 @@ do {
 
 } while (option !== 4);
 
-
+*/
 // BONUS Pide tres conjuntos al usuario por teclado e indica cuáles no se repiten
+
+let number = Number(prompt("introduce el tamaño del set"));
+
+for (let i = 0; i < number; i++) {
+  var usuarioLogin = Number(prompt("introduce numeros  conjunto"));
+}
+
+let number1 = Number(prompt("introduce el tamaño del set"));
+for (let i = 0; i < number1; i++) {
+  var usuarioLogin = Number(prompt("introduce numeros conjunto"));
+}
+
+let number2 = Number(prompt("introduce el tamaño del set"));
+for (let i = 0; i < number; i++) {
+  var usuarioLogin = Number(prompt("introduce numeros del conjunto"));
+}
