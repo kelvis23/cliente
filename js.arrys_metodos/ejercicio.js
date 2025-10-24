@@ -56,24 +56,121 @@ if (arr3.includes(usuario2)) {
 */
 //Crea un menú que controle los datos de un array (como una lista de la compra), que permita añadir al final o al principio, eliminar alguno si existe o borrar todos, y a cada paso actualice (o vuelva a mostrar) la lista completa.
 
-/*var list = []
-do {
-  opt = Number(prompt("-- control de datos -- \n"))
-} while (option != 4);
-*/
-//Dado un array con precios, aplicar a todos un descuento indicado por prompt.
 
+var list = []
+var option;
+do {
+  option = Number(prompt(" 1 ver lista  \n"
+    + "2 añadir producto a principio \n "
+    + "3 añadir producto a final \n"
+    + " 4 eliminar algun producto \n"
+    + "5 borrar todos \n"
+    + "6 salir \n"
+  ));
+  if (option === 1) {
+    //mostrar proudctos
+    if (list.length == 0) {
+      alert("productos no añadidos.");
+    } else {
+      let lista = "productos registrados:\n";
+      for (var i = 0; i < list.length; i++) {
+        lista += "- " + list[i] + "\n";
+      }
+      alert(lista);
+    }
+  } else if (option === 2) {
+    // mostrar producto al pricipio
+    var producto = prompt("Introduce el producto a añadir al principio:");
+    if (producto) {
+      list.unshift(producto);
+      alert("Producto añadido al principio.");
+    }
+    //mostrar proudctos
+    let lista = "productos registrados:\n";
+    for (var i = 0; i < list.length; i++) {
+      lista += "- " + list[i] + "\n";
+    }
+    alert(lista);
+
+  } else if (option === 3) {
+    // mostrar producto al final
+    var producto = prompt("Introduce el producto a añadir al final:");
+    if (producto) {
+      list.push(producto);
+      alert("Producto añadido al final.");
+    }
+    //mostrar proudctos
+    let lista = "productos registrados:\n";
+    for (var i = 0; i < list.length; i++) {
+      lista += "- " + list[i] + "\n";
+    }
+    alert(lista);
+
+  } else if (option === 4) {
+    if (list.length == 0) {
+      alert("La lista está vacía.");
+    } else {
+   
+      var eliminar = prompt("Introduce el nombre del producto a eliminar:");
+      //El método indexOf() retorna el primer índice en el que se puede encontrar un elemento dado en el array, ó retorna -1 si el elemento no esta presente.
+      var index = list.indexOf(eliminar);
+      if (index !== -1) {
+        //El método splice() cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.
+        list.splice(index, 1);
+        alert("Producto eliminado.");
+      } else {
+        alert("El producto no se encuentra en la lista.");
+      }
+      //mostrar proudctos
+      let lista = "productos registrados:\n";
+      for (var i = 0; i < list.length; i++) {
+        lista += "- " + list[i] + "\n";
+      }
+      alert(lista);
+    }
+
+  } else if (option === 5) {
+       // eleminar todos
+       //  le indica al navegador que muestre una ventana de diálogo con un mensaje opcional, y que espere hasta que el usuario acepte o cancele la ventana de confirmación.
+    var confirmar = confirm("¿Seguro que deseas borrar todos los productos?");
+    if (confirmar) {
+      list = [];
+      alert("Todos los productos fueron eliminados.");
+    }
+  } else if (option === 6) {
+    alert("Saliendo del programa...");
+
+  } else {
+    alert("Opción no válida, intenta de nuevo.");
+  }
+
+
+} while (option !== 6);
+
+
+
+
+
+
+
+
+
+
+
+
+//Dado un array con precios, aplicar a todos un descuento indicado por prompt.
+/*
 var descuento = Number(prompt("introduce el descuento"))
 var arr5 = [21, 5, 34, 6, 10, 7, 1, 5]
 let rebaja = descuento * 0.01
 var preciosConDescuento = []
-for(const x of arr5){
- var presiodescuento= x - (x * rebaja);
-preciosConDescuento.push(presiodescuento);
+for (const x of arr5) {
+  var presiodescuento = x - (x * rebaja);
+  preciosConDescuento.push(presiodescuento);
 }
 console.log("Precios originales:", arr5);
 console.log("Precios con descuento:", preciosConDescuento);
-
+*/
 //BONUS: Reutiliza el ejercicio 1 y posteriormente devuelve el array ordenado.
 /*
 var arr6 = [];
