@@ -8,7 +8,7 @@ console.log(set1)
 //- Dados el setA = new Set([1,2,3,4]) y el setB = new Set([3,4,5,6]) devuelve un set que contenga 
 // los elementos comunes en los dos anteriores 
 // (usando la función filter que vimos con los arrays)
-
+/*
 setA = new Set([1, 2, 3, 4]);
 setB = new Set([3, 4, 5, 6]);
 
@@ -21,6 +21,7 @@ commonElements = new Set(
 );
 
 console.log(commonElements);
+*/
 
 // Copia el ejercicio del menú de inicio de sesión y convierte los arrays en un mapa.
 
@@ -110,19 +111,46 @@ do {
 
 */
 // BONUS Pide tres conjuntos al usuario por teclado e indica cuáles no se repiten
+var number = Number(prompt("introduce el tamaño del set"));
 
-let number = Number(prompt("introduce el tamaño del set"));
+const setA = new Set();
 
 for (let i = 0; i < number; i++) {
-  var usuarioLogin = Number(prompt("introduce numeros  conjunto"));
+  var usuarioLogin = Number(prompt("introduce los numeros conjunto"));
+  setA.add(usuarioLogin)
 }
+
+console.log("El conjunto A es:", setA);
 
 let number1 = Number(prompt("introduce el tamaño del set"));
+
+const setB = new Set();
+
 for (let i = 0; i < number1; i++) {
-  var usuarioLogin = Number(prompt("introduce numeros conjunto"));
+  var usuarioLogin = Number(prompt("introduce los numeros del conjunto"));
+  setB.add(usuarioLogin)
 }
+console.log("El conjunto B es:", setB);
 
 let number2 = Number(prompt("introduce el tamaño del set"));
-for (let i = 0; i < number; i++) {
-  var usuarioLogin = Number(prompt("introduce numeros del conjunto"));
+
+const setC = new Set();
+
+for (let i = 0; i < number2; i++) {
+  var usuarioLogin = Number(prompt("introduce  los numeros del conjunto"));
+  setC.add(usuarioLogin)
+
 }
+console.log("El conjunto C es:", setC);
+
+set1 = new Set(
+  [...setA].filter(x => !setB.has(x))
+)
+set2 = new Set(
+  [...setB].filter(x => !setC.has(x))
+)
+set3 = new Set(
+  [...setC].filter(x => !setA.has(x))
+)
+const diferentElements = new Set([...set1, ...set2, ...set3])
+console.log(diferentElements);
