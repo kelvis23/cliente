@@ -34,6 +34,7 @@ if (promedio >= 6) {
 */
 //Crea un array con 10 números. Usa un bucle for para calcular la suma total.
 //Luego, muestra solo los números pares en la consola.
+/*
 var array1=[]
 for (let i = 0; i < 10; i++) {
         var numero = Number(prompt("intro duce un numero"))
@@ -43,3 +44,4 @@ for (let i = 0; i < 10; i++) {
 for (let i = 0; i < array1.length; i++) {
     sum += array1[i];
 }
+*/
