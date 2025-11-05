@@ -59,6 +59,13 @@ function conts(text) {
 console.log(conts("hola"));
 */
 //Función que reciba tres parámetros (a,b,c) y devuelva un array con las soluciones de una ecuación de segundo grado. (-b+-sqrt(b**2-4*a*c)/2*a)
+
+function ecuasion(a,b,c){
+ var s=(-b+-sqrt(b**2-4*a*c)/2*a)
+ return s
+}
+
+console.log(ecuasion(4,2,1));
 //Crea una función que reciba un número y un callback. Si el número es mayor a 10, ejecuta el callback.
 //Función que sume todos los elementos introducidos como parámetros, sin preestablecer el número de parámetros.
 //Función que reciba un array de palabras y devuelva solo las que son palíndromos.
