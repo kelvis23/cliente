@@ -98,7 +98,7 @@ console.log(sum(2,1,5))
 
 */
 //Función que reciba un array de palabras y devuelva solo las que son palíndromos.
-
+/*
 function palíndromos(textos) {
  var palabras = []
   for (let i = 0; i < textos.length; i++) {
@@ -120,3 +120,4 @@ function palíndromos(textos) {
 var text=["cama","Ana","Rosa","reconocer","oso"]
 
 console.log(palíndromos(text))
+*/
