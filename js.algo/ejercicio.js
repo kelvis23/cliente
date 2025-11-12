@@ -8,7 +8,7 @@
 
 console.log (fibonachi(6));
 */
-
+/*
 function sumarArray(arr){
   if (arr.length ===0){
     return 0;
@@ -18,4 +18,10 @@ function sumarArray(arr){
 
 var arr = [2,4,5, 1,4];
 
-console.log(sumarArray(arr));
+console.log(sumarArray(arr)); 
+*/
+
+function ordenar(text){
+  if ( text ===0) return 0
+  
+}
