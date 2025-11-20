@@ -3,23 +3,18 @@
 1.- Crear un objeto persona con nombre, edad y ciudad. Acceder a sus propiedades con . y con [ ]. Cambiar el valor de edad y agregar una nueva propiedad profesión.
 */
 class Coche {
-  constructor(nombre,edea,ciudad){
+  constructor(nombre,edad,ciudad){
     this.nombre = nombre;
-    this.edea = edea;
+    this.edad = edad;
     this.ciudad = ciudad;
   }
 
 
-  encender(){
+  edad(){
     console.log(`$(this.nombre) $(this.edad) $(this.ciudad) esta  encendido. `);
-
   }
 
-
-
-
 }
-
 
 
 /*
@@ -32,5 +27,4 @@ class Coche {
 5.- Crea la función buscarPorNombre(nombre) que devuelva el objeto del estudiante correspondiente.
 
 6.- Crea la función actualizarNota(nombre, nuevaNota) que cambie la nota del estudiante.
-
 */
