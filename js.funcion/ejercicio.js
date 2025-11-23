@@ -1,93 +1,123 @@
-//1.- Crear un objeto persona con nombre, edad y ciudad. Acceder a sus propiedades con . y con [ ]. Cambiar el valor de edad y agregar una nueva propiedad profesión.
-/*class Persona {
-  constructor(nombre,edad,ciudad){
-    this.nombre = nombre;
-    this.edad = edad;
-    this.ciudad = ciudad;
-  }
+//Crea una función que calcule el cuadrado de un número.
 
-   // Método saludar
-  saludar() {
-    console.log(`Hola, soy ${this.nombre}`);
-  }
-
-  // Método cumplir años
-  cumplirAnos() {
-    this.edad += 1;
-  }
-}
-const persona1 = new Persona("Ana", 25, "Madrid");
-
-
-console.log(persona1.nombre);   
-console.log(persona1["edad"]);   
-console.log(persona1["ciudad"]); 
-
-persona1.edad = 29;
-console.log(persona1.edad); 
-
-
-persona1.profesion = "Ingeniera";
-console.log(persona1.profesion); 
-
-//2.- Añadir un método saludar() que muestre "Hola, soy <nombre>". Añadir un método cumplirAnos() que aumente la edad en 1.
-
-
-persona1.saludar();    
-persona1.cumplirAnos();
-console.log(persona1.edad)
-
-
-//3.- Usar delete para eliminar la propiedad ciudad. Mostrar el objeto antes y después.
-
-delete persona1.ciudad;
-console.log(persona1);   
-
-*/
-//4.- Crea un array de estudiantes, cada uno con nombre y nota. Crea una función media() y otra aprobados() que devuelva un array con los alumnos con nota superior a 5.
-
-const estudiantes = [
-  { nombre: "Ana", nota: 8 },
-  { nombre: "Luis", nota: 4 },
-  { nombre: "María", nota: 6 },
-  { nombre: "Pedro", nota: 3 },
-  { nombre: "Sofía", nota: 9 }
-];
-
-function media(lista) {
-  let suma = 0;
-  for (let est of lista) {
-    suma += est.nota;
-  }
-  return suma / lista.length;
+function cuadrado(a){
+  return a**2;
 }
 
-function aprobados(lista) {
-  return lista.filter(est => est.nota > 5);
+console.log(cuadrado(2))
+
+//Función calculadora de número factorial.
+
+
+function factorial(a){
+  var mul = 1
+  for(let i =1 ;i<=a ;i++){
+    mul*=i
+  }
+  return mul
 }
 
+console.log(factorial(5))
 
+// Función que convierta grados Celsius a Fahrenheit.
 
-console.log( media(estudiantes)); 
-console.log( aprobados(estudiantes));
-
-//5.- Crea la función buscarPorNombre(nombre) que devuelva el objeto del estudiante correspondiente.
-function buscarPorNombre(nombre) {
-  //sirve para buscar un estudiante específico dentro del array estudiantes según su nombre.
-  return estudiantes.find(est => est.nombre === nombre);
+function temperatura(a) {
+  var c = 0
+  c = (a - 32) / 1.8
+  return c
 }
-console.log(buscarPorNombre("María"));
+console.log(temperatura(100))
 
-//6.- Crea la función actualizarNota(nombre, nuevaNota) que cambie la nota del estudiante.
+//Función esPrimo() que devuelva booleano.
 
-function actualizarNota(nombre, nuevaNota) {
-  const estudiante = estudiantes.find(est => est.nombre === nombre);
+function esPrimo(a){
+  if(a %2==0){
+    return true
+  }
+  return false
+}
+console.log(esPrimo(4));
+
+
+
+
+//Función que cuente el número de vocales de una palabra.
+
+function conts(text) {
+  var voc = ["a", "e", "i", "o", "u"]
+  let contador = 0;
+
+  for (let i = 0; i < text.length; i++) {
+  //toLowerCase : convierte todos los caracteres de una cadena de texto a minúsculas
+    var caracter = text[i].toLowerCase();
+    if (voc.includes(caracter)) {
+      contador++;
+    }
+  }
+  return contador;
+}
+
+console.log(conts("hola"));
+
+//Función que reciba tres parámetros (a,b,c) y devuelva un array con las soluciones de una ecuación de segundo grado. (-b+-sqrt(b**2-4*a*c)/2*a)
+
+function ecuasion(a,b,c){
+  var x =Math.sqrt(b**2-4*a*c)
+ var s1 = (-b-x)/(2*a);
+ var s2 = (-b+x)/(2*a);
+ return [s1,s2]
+}
+
+console.log(ecuasion(1,-5,6));
+
+
+//Crea una función que reciba un número y un callback. Si el número es mayor a 10, ejecuta el callback.
+
+function mostrar(number) {
+  alert("el numero "+number+" es mayor que 10");
+}
+
+function procesarEntradaUsuario(callback , number) {
+  if (number> 10){
+    callback(number)
+  }
+}
+
+procesarEntradaUsuario(mostrar,11);
+
+//Función que sume todos los elementos introducidos como parámetros, sin preestablecer el número de parámetros.
+
+function sum(...number) {
+ var sum =0 
+  for (let i = 0; i < number.length; i++) {
+    sum+=number[i]
+  }
+  return sum
+}
+console.log(sum(2,1,5))
+
+
+//Función que reciba un array de palabras y devuelva solo las que son palíndromos.
+
+function palíndromos(textos) {
+ var palabras = []
+  for (let i = 0; i < textos.length; i++) {
+    var caracter = textos[i].toLowerCase();
+    // Divide la cadena de texto en un array de caracteres
+    var arrCaracter =caracter.split('')
+    // Invierte el orden de los elementos en el array
+    var invertir = arrCaracter.reverse()
+    //Une los elementos del array invertido en una nueva cadena
+    var palabra = invertir.join('')
+    if( caracter==palabra ){
+      palabras.push(caracter)
+    }
+  }
+    return palabras 
   
-  if (estudiante) {
-    estudiante.nota = nuevaNota;
-    return estudiante; 
-  } else {
-    return null; 
-  }
 }
-console.log(actualizarNota("Luis", 7));
+
+var text=["cama","Ana","Rosa","reconocer","oso"]
+
+console.log(palíndromos(text))
+
