@@ -1,5 +1,6 @@
 //1.- Crear un objeto persona con nombre, edad y ciudad. Acceder a sus propiedades con . y con [ ]. Cambiar el valor de edad y agregar una nueva propiedad profesión.
-/*class Persona {
+
+class Persona {
   constructor(nombre,edad,ciudad){
     this.nombre = nombre;
     this.edad = edad;
@@ -43,7 +44,7 @@ console.log(persona1.edad)
 delete persona1.ciudad;
 console.log(persona1);   
 
-*/
+
 //4.- Crea un array de estudiantes, cada uno con nombre y nota. Crea una función media() y otra aprobados() que devuelva un array con los alumnos con nota superior a 5.
 
 const estudiantes = [
@@ -74,6 +75,7 @@ console.log( aprobados(estudiantes));
 //5.- Crea la función buscarPorNombre(nombre) que devuelva el objeto del estudiante correspondiente.
 function buscarPorNombre(nombre) {
   //sirve para buscar un estudiante específico dentro del array estudiantes según su nombre.
+  //El método find() devuelve el valor del primer elemento del array que cumple la función de prueba proporcionada.
   return estudiantes.find(est => est.nombre === nombre);
 }
 console.log(buscarPorNombre("María"));
