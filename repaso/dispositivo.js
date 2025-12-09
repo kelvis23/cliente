@@ -76,7 +76,7 @@ function promedio(arr1){
 }
 /*
 otra forma de hacer lo 
-  for (let i of arr1) suma += n;
+  for (let i of arr1) suma += i;
 */
 
 return suma/arr1.length;
