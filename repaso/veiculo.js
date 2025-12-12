@@ -68,7 +68,7 @@ Luego:
 ○ llamar a filtrarPares(lista)
 ○ llamar a aplicarOperacion
 */
-/*
+
 var array = [1,13,6,9,10,4]
 
 function suma(arr1){
@@ -92,9 +92,9 @@ function pares(arr1){
 }
 console.log(pares(array))
 
+
 function aplicarOperacion(lista, operacion) {
   return lista.map(operacion);
 }
 const resultadoOperacion = aplicarOperacion(array, num => num * 2);
 console.log( resultadoOperacion);
-*/

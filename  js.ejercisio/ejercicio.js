@@ -45,10 +45,10 @@ text2("Hola esto es una prueba y una presentasion ");
 function text3(text) {
 text = text.toLowerCase();
     //poner que ponga las mayusculas en minusculas
-    return text.replace("perro", "gato");
+    return text.replace(/perro/g, "gato");
 }
 
-console.log(text3("Hola soy un perro "));
+console.log(text3("Hola soy un perro  soy un otro perro "));
 
 
 //4.- Crea una función que reciba dos números por parámetro y devuelva un número aleatorio entre ellos.
