@@ -34,11 +34,10 @@ if(donde ==1){
 
 /* crea una lista  con tres elementos seleciona el elemento del medio y mustra por consola el hermano anterior y hermano siguinte  */
 
-   // Seleccionamos el elemento del medio
-    const elementoMedio = document.querySelectorAll('#tienda li')[1];
-    const elementofinal = document.querySelectorAll('#tienda li')[2];
-    const elementodeAtras = document.querySelectorAll('#tienda li')[0];
 
-    // Mostramos por consola el hermano anterior y el siguiente
-    console.log("Hermano siguiente:"+ elementofinal.textContent);
+    const elementoMedio = document.querySelectorAll('#tienda li')[1];
+    const elementofinal = elementoMedio.previousElementSibling;
+    const elementodeAtras = elementoMedio.nextElementSibling
+
     console.log("Hermano anteriro:"+elementodeAtras.textContent);
+    console.log("Hermano siguiente:"+ elementofinal.textContent);
