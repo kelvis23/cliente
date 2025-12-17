@@ -51,8 +51,8 @@ a1.actualizarCantidad(50)
 a1.obtenerValorTotal()
 
 var b2 = new Almacen ([
- 1235 ==  new Producto(1235,"telefonos","electronico",123,40),
-  150 ==  new Producto(150,"sapato","utilidad",50,10)
+   new Producto(1235,"telefonos","electronico",123,40),
+   new Producto(150,"sapato","utilidad",50,10)
 ])
 
 console.log(b2)
