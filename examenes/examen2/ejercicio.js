@@ -39,6 +39,7 @@ class Producto  {
             return this.productos[i];
         }
    }
+   return null;
 }
  }
 
