@@ -13,7 +13,7 @@ class Producto  {
     }
     obtenerValorTotal (){
         const valor = (this.precio *this.stock)
-        console.log("el balor total es de "+ valor)
+        return valor;
     }
 }
  class Almacen   {
@@ -24,24 +24,23 @@ class Producto  {
    
   }
     agregarProducto(producto){
-        this.productos=producto
+        this.productos.push(producto)
    }
    elimarProducto(id){
-    if(this.productos.find(valor => valor ==id)){
-        
+    for(let i =0; i< this.productos.length; i++){
+        if(this.productos[i].id==id){
+            thi.producto.splice(i,1);
+        }
     }
-
-
-
    }
    buscarProducto(id){
-    if(this.productos.find(valor => valor ==id)){
-
-    }else{
-        console.log("no se a encontrado el id ")
-    }
+    for(let i =0; i< this.productos.length; i++){
+        if(this.productos[i].id=id){
+            return this.productos[i];
+        }
    }
 }
+ }
 
 
 
