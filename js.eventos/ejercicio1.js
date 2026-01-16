@@ -64,8 +64,8 @@ let parafo = document.querySelector("#btn5");
 let texto = document.querySelector("#p1");
 
 
-
 parafo.addEventListener("click",function(){
+    //toggle añade o quita la clase 
     texto.classList.toggle("p1");
 
 });
