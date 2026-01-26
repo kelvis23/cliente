@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen</title>
+
+
+
+</head>
+
+<body >
+ 
+<div id="resultado"></div>
+
+ <h2>Botones creados con innerHTML</h2>
+  <button id="agregar">Agregar botón</button>
+
+  <div id="contenedor"></div>
+
+    <h1>Ejemplo de agregar párrafo dinámicamente</h1>
+  <div id="totales">
+    <p>Este es un párrafo inicial.</p>
+  </div>
+
+  <button id="agregar">Agregar párrafo</button>
+
+  <div id="contenedor3">
+  <p id="p1">Primer párrafo</p>
+  <p id="p2">Segundo párrafo</p>
+</div>
+
+<script>
+  document.getElementById("resultado").innerHTML =
+    "<h2>Bienvenido</h2><p>Todo listo ✅</p>";
+
+
+const contenedor = document.getElementById("contenedor");
+const btnAgregar = document.getElementById("agregar");
+
+// 👉 Delegación de eventos
+contenedor.addEventListener("click", e => {
+  if (e.target.classList.contains("btn6")) {
+    console.log("Botón clickeado:", e.target.textContent);
+  }
+});
+
+// 👉 Crear botones usando innerHTML
+btnAgregar.addEventListener("click", () => {
+  contenedor.innerHTML += `
+    <button class="btn6">Botón ${contenedor.children.length + 1}</button>
+  `;
+});
+
+  // Función para agregar un párrafo nuevo
+    function agregarParrafo() {
+      const nuevo = document.createElement('p'); // Creamos el párrafo
+      nuevo.textContent = "Este es el párrafo final"; // Le ponemos texto
+      document.getElementById('totales').appendChild(nuevo); // Lo agregamos al contenedor
+    }
+
+     const contenedor3 = document.getElementById('contenedor3');
+
+  const nuevo = document.createElement('p');
+  nuevo.textContent = "Párrafo insertado antes del segundo";
+
+  const segundo = document.getElementById('p2');
+
+  contenedor3.insertBefore( segundo,nuevo);
+
+</script>
+  <script src="ejercicio2.js"> </script>
+</body>
+
+</html>
