@@ -80,12 +80,3 @@ boton.addEventListener("click", () => {
   }
 });
 */
-
-
-
-
-
-
-
-
-
