@@ -34,7 +34,7 @@ const monsters = [
     health: 15
   },
   {
-    name: "gobli",
+    name: "goblin",
     level: 8,
     health: 60
   },
@@ -61,7 +61,7 @@ const locations = [
   },
   {
     name: "mazmorra",
-    "button text": ["Luchar contra slime", "Luchar contra fanged beast", "Volver a la plaza"],
+    "button text": ["Luchar contra slime", "goblin", "Volver a la plaza"],
     "button functions": [fightSlime, fightBeast, goTown],
     text: "Entras a la mazmora. Ves algunos monstruos.."
   },

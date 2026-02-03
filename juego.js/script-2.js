@@ -1,3 +1,4 @@
+// Variables principales del jugador y del juego
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -6,6 +7,7 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
+// Botones y textos
 let button1 = document.querySelector('#button1');
 let button2 = document.querySelector("#button2");
 let button3 = document.querySelector("#button3");
@@ -17,19 +19,20 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
+// Armas y monstruos
 const weapons = [
   { name: 'espada de madera', power: 5 },
   { name: 'daga', power: 30 },
   { name: 'martillo', power: 50 },
   { name: 'espada', power: 100 }
 ];
-
 const monsters = [
   { name: "slime", level: 2, health: 15 },
   { name: "gobli", level: 8, health: 60 },
   { name: "dragón", level: 20, health: 300 }
 ];
 
+// Localizaciones
 const locations = [
   {
     name: "plaza del pueblo",
@@ -57,21 +60,21 @@ const locations = [
   },
   {
     name: "matar monstruo",
-    "button text": ["Volver a la plaza", "Volver a la plaza", "Volver a la plaza"],
-    "button functions": [goTown, goTown, goTown],
+    "button text": ["Volver a la plaza", "Seguir explorando la mazmorra", ""],
+    "button functions": [goTown, goCave, null],
     text: 'El monstruo grita "¡Arg!" al morir. Ganas experiencia y encuentras oro'
   },
   {
     name: "derrota",
-    "button text": ["¿REINICIAR?", "¿REINICIAR?", "¿REINICIAR?"],
-    "button functions": [restart, restart, restart],
+    "button text": ["¿REINICIAR?", "", ""],
+    "button functions": [restart, null, null],
     text: "Has muerto. &#x2620;"
   },
-  { 
-    name: "victoria", 
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
-    "button functions": [restart, restart, restart], 
-    text: "¡Derrotaste al dragón! ¡GANASTE EL JUEGO! &#x1F389;" 
+  {
+    name: "victoria",
+    "button text": ["REPLAY?", "", ""],
+    "button functions": [restart, null, null],
+    text: "¡Derrotaste al dragón! ¡GANASTE EL JUEGO! &#x1F389;"
   },
   {
     name: "easter egg",
@@ -80,39 +83,51 @@ const locations = [
     text: "Encuentras un juego oculto. Elige un número. Se elegirán 10 números al azar entre 0 y 10. ¡Si el número que eliges aparece, ganas!"
   }
 ];
+// iniciar botones
 
-// ========================================
+
 // FUNCIONES PARA MANEJAR EVENTOS EN BOTONES
-// ========================================
-function setButtonListeners(button, newListener) {
-  // Si ya hay un listener, lo removemos
+
+function setButtonListeners(button, listener) {
+  // Quitar listener anterior
   if (button.currentListener) {
     button.removeEventListener("click", button.currentListener);
   }
-  button.currentListener = newListener;
-  button.addEventListener("click", newListener);
+  // Guardar el listener actual
+  button.currentListener = listener;
+  // Agregar listener si existe
+  if (listener) {
+    button.addEventListener("click", listener);
+    button.style.display = "inline-block";
+  } else {
+    button.style.display = "none"; // Ocultar si no hay función
+  }
 }
 
-// ========================================
+
 // FUNCIONES DEL JUEGO
-// ========================================
 function update(location) {
+    //esconde la informasion del monstruo
   monsterStats.style.display = "none";
   text.innerHTML = location.text;
 
-  button1.innerText = location["button text"][0];
-  button2.innerText = location["button text"][1];
-  button3.innerText = location["button text"][2];
-
-  setButtonListeners(button1, location["button functions"][0]);
-  setButtonListeners(button2, location["button functions"][1]);
-  setButtonListeners(button3, location["button functions"][2]);
+  const buttons = [button1, button2, button3];
+  for (let i = 0; i < buttons.length; i++) {
+    setButtonListeners(buttons[i], location["button functions"][i]);
+    if (location["button text"][i]) {
+      buttons[i].innerText = location["button text"][i];
+    }
+  }
 }
+
+// Navegación entre ubicaciones
 
 function goTown() { update(locations[0]); }
 function goStore() { update(locations[1]); }
 function goCave() { update(locations[2]); }
 
+
+// Tienda
 function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
@@ -157,6 +172,7 @@ function sellWeapon() {
   }
 }
 
+// Peleas y combate
 function fightSlime() { fighting = 0; goFight(); }
 function fightBeast() { fighting = 1; goFight(); }
 function fightDragon() { fighting = 2; goFight(); }
@@ -174,7 +190,7 @@ function attack() {
   text.innerText += " Atacas con tu " + weapons[currentWeapon].name + ".";
   
   health -= getMonsterAttackValue(monsters[fighting].level);
-  
+
   if (isMonsterHit()) {
     monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
   } else {
@@ -184,9 +200,8 @@ function attack() {
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
 
-  if (health <= 0) {
-    lose();
-  } else if (monsterHealth <= 0) {
+  if (health <= 0) lose();
+  else if (monsterHealth <= 0) {
     if (fighting === 2) winGame();
     else defeatMonster();
   }
@@ -210,6 +225,7 @@ function dodge() {
   text.innerText = "Esquivas el ataque del " + monsters[fighting].name;
 }
 
+//Fin de combate
 function defeatMonster() {
   gold += Math.floor(monsters[fighting].level * 6.7);
   xp += monsters[fighting].level;
@@ -234,7 +250,6 @@ function restart() {
 }
 
 function easterEgg() { update(locations[7]); }
-
 function pickTwo() { pick(2); }
 function pickEight() { pick(8); }
 
@@ -257,10 +272,8 @@ function pick(guess) {
     if (health <= 0) lose();
   }
 }
-
-// ========================================
 // INICIALIZAR BOTONES
-// ========================================
+
 setButtonListeners(button1, goStore);
 setButtonListeners(button2, goCave);
 setButtonListeners(button3, fightDragon);

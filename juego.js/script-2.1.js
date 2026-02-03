@@ -36,7 +36,7 @@ const monsters = [
 const locations = [
   {
     name: "plaza del pueblo",
-    "button text": ["Ir a la tienda", "Ir a la cueva", "Luchar contra el dragón"],
+    "button text": ["Ir a la tienda", "Ir a la  mazmorra ", "Luchar contra el dragón"],
     "button functions": [goStore, goCave, fightDragon],
     text: "Estás en la plaza del pueblo. Ves un cartel que dice \"Store\"."
   },
@@ -60,8 +60,8 @@ const locations = [
   },
   {
     name: "matar monstruo",
-    "button text": ["Volver a la plaza", "", ""],
-    "button functions": [goTown, null, null],
+    "button text": ["Volver a la plaza", "Seguir explorando la mazmorra", ""],
+    "button functions": [goTown, goCave, null],
     text: 'El monstruo grita "¡Arg!" al morir. Ganas experiencia y encuentras oro'
   },
   {
@@ -120,10 +120,14 @@ function update(location) {
   }
 }
 
+// Navegación entre ubicaciones
+
 function goTown() { update(locations[0]); }
 function goStore() { update(locations[1]); }
 function goCave() { update(locations[2]); }
 
+
+// Tienda
 function buyHealth() {
   if (gold >= 10) {
     gold -= 10;
@@ -168,6 +172,7 @@ function sellWeapon() {
   }
 }
 
+// Peleas y combate
 function fightSlime() { fighting = 0; goFight(); }
 function fightBeast() { fighting = 1; goFight(); }
 function fightDragon() { fighting = 2; goFight(); }
@@ -220,6 +225,7 @@ function dodge() {
   text.innerText = "Esquivas el ataque del " + monsters[fighting].name;
 }
 
+//Fin de combate
 function defeatMonster() {
   gold += Math.floor(monsters[fighting].level * 6.7);
   xp += monsters[fighting].level;
@@ -266,10 +272,8 @@ function pick(guess) {
     if (health <= 0) lose();
   }
 }
-
-// ========================================
 // INICIALIZAR BOTONES
-// ========================================
+
 setButtonListeners(button1, goStore);
 setButtonListeners(button2, goCave);
 setButtonListeners(button3, fightDragon);
