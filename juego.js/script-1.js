@@ -1,4 +1,4 @@
-
+//Variables principales del jugador y del juego
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -8,7 +8,7 @@ let monsterHealth;
 let inventory = ["stick"];
 
 
-
+// botones y textos
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
@@ -20,6 +20,7 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 
+// armas y moustruos
 const weapons = [
   { name: 'espada de madera', power: 5 },
   { name: 'daga', power: 30 },
@@ -43,6 +44,8 @@ const monsters = [
     health: 300
   }
 ]
+
+//Localizaciones
 const locations = [
   {
     name: "plaza del pueblo",
@@ -70,21 +73,21 @@ const locations = [
   },
   {
     name: "matar monstruo",
-    "button text": ["Volver a la plaza", "Volver a la plaza", "Volver a la plaza"],
-    "button functions": [goTown, goTown, goTown],
+    "button text": ["Volver a la plaza", "", ""],
+    "button functions": [goTown, null, null],
     text: 'El monstruo grita "¡Arg!" al morir. Ganas experiencia y encuentras oro'
   },
   {
     name: "derrota",
-    "button text": ["¿REINICIAR?", "¿REINICIAR?", "¿REINICIAR?"],
-    "button functions": [restart, restart, restart],
+    "button text": ["¿REINICIAR?", "", ""],
+    "button functions": [restart, null, null],
     text: "Has muerto. &#x2620;"
   },
-  { 
-    name: "victoria", 
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
-    "button functions": [restart, restart, restart], 
-    text: "¡Derrotaste al dragón! ¡GANASTE EL JUEGO! &#x1F389;" 
+  {
+    name: "victoria",
+    "button text": ["REPLAY?", "", ""],
+    "button functions": [restart, null, null],
+    text: "¡Derrotaste al dragón! ¡GANASTE EL JUEGO! &#x1F389;"
   },
   {
     name: "easter egg",
@@ -101,13 +104,24 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 function update(location) {
+  //esconde la informasion del monstruo
   monsterStats.style.display = "none";
-  button1.innerText = location["button text"][0];
-  button2.innerText = location["button text"][1];
-  button3.innerText = location["button text"][2];
-  button1.onclick = location["button functions"][0];
-  button2.onclick = location["button functions"][1];
-  button3.onclick = location["button functions"][2];
+
+  const buttons = [button1, button2, button3];
+
+  //Actualizar botones según la ubicación
+  for (let i = 0; i < buttons.length; i++) {
+    //revisamos si la ubicación actual tiene texto para ese botón
+    if (location["button text"][i]) {
+      buttons[i].style.display = "inline-block";
+      buttons[i].innerText = location["button text"][i];
+      buttons[i].onclick = location["button functions"][i];
+    } else {
+      // si no hay texto para este boton lo ocultamos 
+      buttons[i].style.display = "none";
+    }
+  }
+
   text.innerHTML = location.text;
 }
 
@@ -122,6 +136,8 @@ function goStore() {
 function goCave() {
   update(locations[2]);
 }
+
+// Comprar salud o armas
 
 function buyHealth() {
   if (gold >= 10) {
@@ -166,6 +182,7 @@ function sellWeapon() {
   }
 }
 
+
 function fightSlime() {
   fighting = 0;
   goFight();
@@ -181,6 +198,7 @@ function fightDragon() {
   goFight();
 }
 
+
 function goFight() {
   update(locations[3]);
   monsterHealth = monsters[fighting].health;
@@ -189,12 +207,13 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
+//Ataque y daño
 function attack() {
   text.innerText = "El " + monsters[fighting].name + " ataca.";
   text.innerText += " Atacas con tu  " + weapons[currentWeapon].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
   if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
   } else {
     text.innerText += " Fallas el ataque..";
   }
@@ -237,6 +256,8 @@ function defeatMonster() {
   update(locations[4]);
 }
 
+// muerte y victoria 
+
 function lose() {
   update(locations[5]);
 }
@@ -256,6 +277,8 @@ function restart() {
   xpText.innerText = xp;
   goTown();
 }
+
+//Easter egg / minijuego
 
 function easterEgg() {
   update(locations[7]);
