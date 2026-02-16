@@ -1,57 +1,27 @@
+//Utilizando la API de los ejemplos previos
+//(https://stephen-king-api.onrender.com/api/books ) hay que crear una función
+//llamada obtenerLibros que utilice fetch y await para obtener los datos de la
+//API y convertir la respuesta a JSON, para poder mostrar los títulos de los libros.
 
-//1.- Crear una función llamada hacerTarea que devuelva una promesa, espere
-//un segundo y se resuelva con el mensaje “Tarea completada”. Crea una
-//función run() marcada como async que llame a hacerTarea usando await e
-//imprima por consola el mensaje que devuelve.
-
-function hacerTarea() {
-        return new Promise((resolve) => {
-
-                setTimeout(() => {
-                        resolve(`Tara completada `);
-
-                }, 1000);
-        })
-}
-
-async function run() {
-        let yamar = await hacerTarea();
-        console.log(yamar)
-}
-
-run();
-
-//2.- Crea una función llamada doblar que reciba un número como parámetro,
-//devuelva una promesa y espere un segundo, resolviendo con el número
-//mutiplicado por dos si el número es positivo y rechazando con “Utiliza solo
-//números positivos” si no. Crea una función run() marcada como async que
-//llame a doblar(5) usando await, y vuelve a doblar el resultado volviendo a
-//llamar a la función doblar para luego imprimir en consola “Resultado: X”
-
-
-function doblar(n) {
-        return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                        if (n >= 0) {
-                                resolve(n * 2)
-                        } else {
-                                reject("Utiliza solo números positivos");
-                        }
-                }, 1000)
-        })
-
-}
-
-async function run() {
+async function obtenerLibros() {
         try {
-                const r1 = await doblar(5);
-                const r2 = await doblar(r1);
-                console.log(`Resultado: ${r2}`);
+                const response = await
+                        fetch("https://stephen-king-api.onrender.com/api/books")
+
+                const data = await response.json();
+                const title = data.data.map(item => item.Title)
+                console.log(title);
         } catch (error) {
-                console.log(error);
+                console.error(error);
         }
 }
 
-doblar(2).then(console.log);
-doblar(-1).then(console.log);
-run();
+obtenerLibros();
+//Bonus extra: utilizando lo que sabemos de manejo del DOM, crear una tabla
+//con título y año de cada libro 🤪
+
+
+
+
+//TIP: Podemos utilizar alguna extensión (P.ej. JSON Viewer Pro en Chrome)
+//para ver la estructura del JSON.
