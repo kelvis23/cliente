@@ -2,22 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Reto Pokémon</title>
-    <link rel="stylesheet" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Animales</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Catálogo Animal</h1>
-    
-    <div class="controls">
-        <input type="text" id="AnimalInput" placeholder="Nombre ">
-        <button id="searchBtn">Buscar</button>
-    </div>
 
-    <ul id="infoAnimal">
+    <div class="container">
+        <h2>Búsqueda animal</h2> 
+        
+        <div class="search-box">
+            <input type="text" id="animalInput" placeholder="P.Ej.: Marsupilami"> 
+            <button id="searchBtn">Buscar</button> 
 
-    </ul>
+        <div id="resultsContainer" class="results-grid"></div> 
 
-    
+        <div id="infoCard" class="info-card"></div> 
+
     <script src="script.js"></script>
 </body>
 </html>
